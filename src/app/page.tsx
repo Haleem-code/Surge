@@ -1,103 +1,217 @@
-import Image from "next/image";
+import { Twitter, Instagram, Youtube } from "lucide-react"
+import Link from "next/link"
+import { WaitlistForm } from "@/components/waitlist-form"
+import FeatureCard from "@/components/feature-card"
+import TestimonialCarousel from "@/components/testimonial-carousel"
+import FaqSection from "@/components/faq-section"
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
+    <div className="flex min-h-screen flex-col">
+      {/* Header */}
+      <header className="sticky top-0 z-50 w-full border-b border-[#C0C0C0]/20 bg-[#001f3f]/95 backdrop-blur-sm">
+        <div className="container mx-auto flex h-16 items-center justify-between px-4">
+          <div className="flex items-center gap-2">
+        <span className="text-2xl font-bold text-white"><span className="text-2xl font-bold text-[#FFD700]">$</span>urge</span>
+          </div>
+          <nav className="hidden md:flex">
+        <ul className="flex items-center gap-8">
+          <li>
+            <Link href="#why" className="text-sm font-medium text-white hover:text-[#FFD700] transition-colors">
+          Why $urge
+            </Link>
           </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
+          <li>
+            <Link
+          href="#features"
+          className="text-sm font-medium text-white hover:text-[#FFD700] transition-colors"
+            >
+          Features
+            </Link>
           </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+          <li>
+            <Link
+          href="#testimonials"
+          className="text-sm font-medium text-white hover:text-[#FFD700] transition-colors"
+            >
+          Testimonials
+            </Link>
+          </li>
+          <li>
+            <Link href="#faq" className="text-sm font-medium text-white hover:text-[#FFD700] transition-colors">
+          FAQ
+            </Link>
+          </li>
+        </ul>
+          </nav>
+          <Link
+        href="#waitlist"
+        className="inline-flex h-10 items-center justify-center rounded-md bg-[#007BFF] px-6 text-sm font-medium uppercase text-white shadow-sm transition-all hover:bg-[#007BFF]/90 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-[#FFD700]"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+        Join Waitlist
+          </Link>
         </div>
+      </header>
+
+      <main className="flex-1">
+        {/* Hero Section */}
+        <section
+          id="hero"
+          className="relative overflow-hidden bg-gradient-to-br from-[#001f3f] to-[#003366] py-20 md:py-32"
+        >
+          <div className="absolute inset-0 bg-[url('/placeholder.svg?height=800&width=1600')] bg-cover bg-center opacity-10"></div>
+          <div className="container relative z-10 mx-auto px-4 text-center">
+            <h1 className="mb-6 font-montserrat text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">
+              Powering Rewards for Your <span className="text-[#FFD700]">True Audience</span>
+            </h1>
+            <p className="mx-auto mb-10 max-w-2xl font-poppins text-lg text-[#C0C0C0] md:text-xl">
+              Take control of your giveaways and reward only your most engaged fans.
+            </p>
+            <div className="mx-auto max-w-md">
+              <WaitlistForm />
+            </div>
+          </div>
+          <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#001f3f] to-transparent"></div>
+        </section>
+
+        {/* Why $urge Section */}
+        <section id="why" className="bg-white py-20">
+          <div className="container mx-auto px-4">
+            <div className="mb-12 text-center">
+              <h2 className="mb-3 font-montserrat text-3xl font-bold text-[#001f3f] md:text-4xl">
+                Why Choose <span className="text-[#FFD700]">$urge</span>?
+              </h2>
+              <p className="mx-auto max-w-2xl font-poppins text-lg text-gray-600">
+                Reward your most loyal fans without wasting your budget on bots and fake engagement.
+              </p>
+            </div>
+            <div className="grid gap-8 md:grid-cols-3">
+              <FeatureCard
+                icon="rocket"
+                title="Maximize Real Engagement"
+                description="Automatically reward only those who truly support your content."
+              />
+              <FeatureCard
+                icon="shield"
+                title="Protect Your Budget"
+                description="Eliminate giveaways that are wasted on bots and inactive accounts."
+              />
+              <FeatureCard
+                icon="zap"
+                title="Automated Rewards"
+                description="Set your budget and let $urge handle the rest."
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* Features Section */}
+        <section id="features" className="bg-[#f8f9fa] py-20">
+          <div className="container mx-auto px-4">
+            <h2 className="mb-12 text-center font-montserrat text-3xl font-bold text-[#001f3f] md:text-4xl">
+              What Makes <span className="text-[#FFD700]">$urge</span> Different?
+            </h2>
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+              <FeatureCard
+                icon="activity"
+                title="Real-time Engagement Tracking"
+                description="Track your followers' interactions and identify true fans instantly."
+                variant="small"
+              />
+              <FeatureCard
+                icon="gift"
+                title="Automated Rewards Distribution"
+                description="Set up your reward budget and let $urge do the rest, distributing rewards to your most engaged fans."
+                variant="small"
+              />
+              <FeatureCard
+                icon="shield"
+                title="Bot Detection & Filtering"
+                description="Keep your rewards safe from fake accounts with advanced filtering systems."
+                variant="small"
+              />
+              <FeatureCard
+                icon="globe"
+                title="Platform Expansion"
+                description="Currently integrated with X (Twitter), with Instagram, TikTok, and YouTube on the roadmap."
+                variant="small"
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* Social Proof Section */}
+        <section id="testimonials" className="bg-white py-20">
+          <div className="container mx-auto px-4">
+            <h2 className="mb-12 text-center font-montserrat text-3xl font-bold text-[#001f3f] md:text-4xl">
+              Hear from <span className="text-[#FFD700]">Early Adopters</span>
+            </h2>
+            <TestimonialCarousel />
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section id="faq" className="bg-[#f8f9fa] py-20">
+          <div className="container mx-auto px-4">
+            <h2 className="mb-12 text-center font-montserrat text-3xl font-bold text-[#001f3f] md:text-4xl">
+              Frequently Asked <span className="text-[#FFD700]">Questions</span>
+            </h2>
+            <FaqSection />
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section id="waitlist" className="bg-gradient-to-br from-[#001f3f] to-[#003366] py-20">
+          <div className="container mx-auto px-4 text-center">
+            <h2 className="mb-6 font-montserrat text-3xl font-bold text-white md:text-4xl">
+              Ready to <span className="text-[#FFD700]">Revolutionize</span> Your Audience Rewards?
+            </h2>
+            <p className="mx-auto mb-10 max-w-2xl font-poppins text-lg text-[#C0C0C0]">
+              Join the waitlist now and be part of the future of social engagement.
+            </p>
+            <div className="mx-auto max-w-md">
+              <WaitlistForm />
+            </div>
+          </div>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+
+      {/* Footer */}
+      <footer className="bg-[#001f3f] py-10 text-[#C0C0C0]">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
+            <div className="flex items-center gap-2">
+              <span className="text-2xl font-bold text-[#FFD700]">$</span>
+              <span className="text-2xl font-bold text-white">urge</span>
+            </div>
+            <div className="flex gap-6">
+              <Link href="#" className="text-white hover:text-[#FFD700]" aria-label="Twitter">
+                <Twitter size={20} />
+              </Link>
+              <div className="flex items-center gap-1 text-[#C0C0C0]/70">
+                <Instagram size={20} />
+                <span className="text-xs">Coming Soon</span>
+              </div>
+              <div className="flex items-center gap-1 text-[#C0C0C0]/70">
+                <Youtube size={20} />
+                <span className="text-xs">Coming Soon</span>
+              </div>
+            </div>
+            <div className="flex flex-wrap gap-6 text-sm">
+              <Link href="#" className="hover:text-white">
+                Privacy Policy
+              </Link>
+              <Link href="#" className="hover:text-white">
+                Terms of Service
+              </Link>
+            </div>
+          </div>
+          <div className="mt-8 text-center text-sm">
+            <p>&copy; 2025 $urge. All rights reserved.</p>
+          </div>
+        </div>
       </footer>
     </div>
-  );
+  )
 }
+
