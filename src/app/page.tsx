@@ -185,7 +185,7 @@ export default function Home() {
               <span className="text-2xl font-bold text-white">urge</span>
             </div>
             <div className="flex gap-6">
-              <Link href="#" className="text-white hover:text-[#FFD700]" aria-label="Twitter">
+              <Link href="https://x.com/surge_rewards" className="text-white hover:text-[#FFD700]" aria-label="Twitter">
                 <Twitter size={20} />
               </Link>
               <div className="flex items-center gap-1 text-[#C0C0C0]/70">
