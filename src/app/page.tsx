@@ -4,6 +4,7 @@ import { WaitlistForm } from "@/components/waitlist-form"
 import FeatureCard from "@/components/feature-card"
 import TestimonialCarousel from "@/components/testimonial-carousel"
 import FaqSection from "@/components/faq-section"
+import Image from "next/image"
 
 export default function Home() {
   return (
@@ -12,7 +13,9 @@ export default function Home() {
       <header className="sticky top-0 z-50 w-full border-b border-[#C0C0C0]/20 bg-[#001f3f]/95 backdrop-blur-sm">
         <div className="container mx-auto flex h-16 items-center justify-between px-4">
           <div className="flex items-center gap-2">
-        <span className="text-2xl font-bold text-white"><span className="text-2xl font-bold text-[#FFD700]">$</span>urge</span>
+        <span className="text-2xl font-bold text-white"><span className="text-2xl font-bold text-[#FFD700]">
+          <Image src={"/logo.jpg"} alt="Logo" width={40} height={40} className="inline-block rounded-full" />
+          </span>urge</span>
           </div>
           <nav className="hidden md:flex">
         <ul className="flex items-center gap-8">
