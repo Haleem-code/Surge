@@ -62,7 +62,7 @@ export default async function UsersPage() {
               <CardDescription className="text-gray-400">Twitter Connected</CardDescription>
               <CardTitle className="text-2xl flex items-center text-white">
                 <ArrowUpRight className="mr-2 h-5 w-5 text-purple-500" />
-                {users.filter((user:any) => user.twitter).length}
+                {users.filter((user: User) => user.twitter).length}
               </CardTitle>
             </CardHeader>
             <div className="h-1 w-full bg-gradient-to-r from-purple-500 to-purple-700"></div>
@@ -106,7 +106,7 @@ export default async function UsersPage() {
                 <Users className="h-16 w-16 text-gray-700 mb-4" />
                 <h3 className="text-xl font-medium text-gray-300">No users yet</h3>
                 <p className="text-gray-500 mt-2 max-w-md">
-                  Your waitlist is empty. When users sign up, they'll appear here.
+                  Your waitlist is empty. When users sign up, they &apos;ll appear here.
                 </p>
               </div>
             ) : (

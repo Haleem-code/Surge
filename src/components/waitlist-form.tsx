@@ -37,9 +37,9 @@ export function WaitlistForm() {
           type: "error",
         })
       }
-    } catch (error) {
+    } catch (error: unknown) {
       setMessage({
-        text: "Failed to submit. Please try again later.",
+        text: error instanceof Error ? error.message : "Failed to submit. Please try again later.",
         type: "error",
       })
     } finally {
